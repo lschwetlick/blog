@@ -3,6 +3,7 @@
 
 $open-sans: 'Open Sans', sans-serif;
 $source-sans: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$splash: #1c9647;
 
 * {
     -webkit-box-sizing: border-box;
@@ -50,7 +51,7 @@ a {
     transition: all 0.3s;
     &:hover,
     &:focus {
-        color: #EC407A;
+        color: $splash;
         text-decoration: dotted;
     }
 }
@@ -275,7 +276,7 @@ tbody tr:nth-child(odd) th {
 
 .top {
     position: fixed;
-    background: #EC407A;
+    background: $splash;
     height: 3px;
     width: 100%;
     top: 0;
@@ -293,13 +294,13 @@ tbody tr:nth-child(odd) th {
         padding-left: 9px;
         padding-right: 9px;
         text-align: center;
-        border: 2px #EC407A solid;
-        color: #EC407A;
+        border: 2px $splash solid;
+        color: $splash;
         &:hover,
         &:focus {
             color: #fff;
             border-color: #fff;
-            background: #EC407A;
+            background: $splash;
         }
     }
 }
@@ -406,10 +407,10 @@ tbody tr:nth-child(odd) th {
         }
         span {
             font-weight: 800;
-            color: #EC407A;
+            color: $splash;
             &:hover,
             &:focus {
-                color: #EC407A;
+                color: $splash;
                 text-decoration: none;
             }
         }

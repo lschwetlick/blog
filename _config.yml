@@ -1,20 +1,19 @@
-name:               "Ink"
-description:        "A minimalistic jekyll theme for humans"
+name:               "Lisa"
+description:        "General thoughts and specific hacks from the domains of science, cognition and programming"
 
-url:                ""
-author:             "thinker3197"
-email:              "jhondoe@abc.com"
-gravatar_hash:      "205e460b479e2e5b48aec07710c08d50"
-twitter:            "jhondoe"
-email:              "jhondoe@abc.com"
-github:             "jhondoe"
-pinterest:          "jhondoe"
-linkedin:           "jhondoe"
-facebook:           "jhondoe"
+url:                "http://LisaSchwetlick.de"
+author:             "Lisa"
+email:              "mail@lschwetlick.de"
+twitter:            "Enemy_Anemone"
+github:             "lschwetlick"
+# pinterest:          "jhondoe"
+# linkedin:           "jhondoe"
+facebook:           "AnEnemyAnemone"
 
-disqus_shortname:   "thinker3197"
+# disqus_shortname:   "thinker3197"
 
-background:         "http://apple.wallpapersfine.com/wallpapers/original/1242x2208/w-5273.jpg"
+avatar_img:         "/resources/images/asd.jpg"
+background:         "/resources/images/asd.jpg"
 
 paginate:           5
 paginate_path:      "/page:num/"
@@ -27,8 +26,8 @@ markdown:           kramdown
 nav:
   - name:           "About"
     href:           "/about"
-  - name:           "Download"
-    href:           "/releases"
+  - name:           "Home"
+    href:           ""
 
 sass:
   style:            :compressed

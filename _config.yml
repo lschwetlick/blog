@@ -2,6 +2,7 @@ name:               "Lisa"
 description:        "General thoughts and specific hacks from the domains of science, cognition and programming"
 
 url:                "http://LisaSchwetlick.de"
+blogurl:            "/"
 author:             "Lisa"
 email:              "mail@lschwetlick.de"
 twitter:            "Enemy_Anemone"
@@ -12,8 +13,8 @@ facebook:           "AnEnemyAnemone"
 
 # disqus_shortname:   "thinker3197"
 
-avatar_img:         "/resources/images/asd.jpg"
-background:         "/resources/images/asd.jpg"
+avatar_img:         "/resources/images/lisaXS.jpg"
+background:         "/resources/images/lisaXS.jpg"
 
 paginate:           5
 paginate_path:      "/page:num/"
@@ -26,8 +27,8 @@ markdown:           kramdown
 nav:
   - name:           "About"
     href:           "/about"
-  - name:           "Home"
-    href:           ""
+  # - name:           "Home"
+  #   href:           ""
 
 sass:
   style:            :compressed

@@ -6,6 +6,36 @@ $source-sans: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $splash: #1c9647;
 $background: #052716;
 
+
+/* Customizations */
+
+.content.post {
+    max-width: 60%;
+}
+
+kbd {
+    white-space: nowrap;
+    color: rgb(0, 0, 0);
+    background: none repeat scroll 0% 0% rgb(238, 238, 238);
+    border-style: solid;
+    border-color: rgb(204, 204, 204) rgb(170, 170, 170) rgb(136, 136, 136) rgb(187, 187, 187);
+    padding: 2px 4px;
+    border-width: 1px 2px 2px 1px;
+    font-size: 0.7em;
+}
+
+.inline {
+    display: inline;
+}
+
+.shadow {
+    box-shadow: 3px 3px 2px #868686;
+    border-radius: 0;
+    border: 1px solid #b7b7b7;
+}
+
+/* Template */
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -24,9 +54,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    @media (min-width: 38em) {
-        overflow: hidden;
-    }
 }
 
 html {
@@ -393,7 +420,6 @@ tbody tr:nth-child(odd) th {
     padding: 1.4rem 0.8rem;
     margin-left: auto;
     margin-right: auto;
-    overflow: auto;
     @media (min-width: 38rem) {
         margin-top: 0;
         margin-left: 20%;

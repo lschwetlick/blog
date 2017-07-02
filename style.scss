@@ -3,8 +3,18 @@
 
 $open-sans: 'Open Sans', sans-serif;
 $source-sans: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$splash: #1c9647;
-$background: #052716;
+$inconsolata: 'Inconsolata', monospace;
+
+// $splash: #106806;
+// $splash: #066842;
+$splash:#0b4631;
+// $background: #106806;
+// $background: #066845;
+// $background: #066857;
+$background: #066842;
+// $background: #682906;
+
+// ;#066857, #066842, #682906
 
 
 /* Customizations */
@@ -58,11 +68,15 @@ body {
 
 html {
     font-family: $source-sans;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 300;
     line-height: 1.6;
     @media (min-width: 38em) {
-        font-size: 20px;
+        font-size: 17px;
+    }
+    .post-date{
+        color: #B7B7B7;
+        margin: 3px;
     }
 }
 
@@ -74,7 +88,7 @@ body {
 }
 
 a {
-    color: #515151;
+    color: #989898;
     text-decoration: none;
     transition: all 0.3s;
     &:hover,
@@ -357,11 +371,15 @@ tbody tr:nth-child(odd) th {
         width: 50%;
         float: right;
         color: #FFF;
+        font-family: $open-sans;
+        letter-spacing: 7px;
+        font-weight:210;
+        font-size: 30px;
             a {
                 color: #FFF;
                 &:hover,
                 &:focus {
-                    color: $splash;
+                    color: #989898;
                 }
             }
     }
@@ -369,12 +387,21 @@ tbody tr:nth-child(odd) th {
         height: auto;
         width: 100%;
         text-align: center;
-        color: #BDBDBD;
+        color: #DEDEDE;
+        font-family: $inconsolata;
+        font-weight:500;
     }
     .social {
         margin-left: 25vw;
         height: auto;
         width: 100%;
+            a{
+                color: #d8d8d8;
+                &:hover,
+                &:focus {
+                    color: #0b4631;
+                }
+            }
     }
     @media (min-width: 38em) {
         position: fixed;
@@ -420,6 +447,10 @@ tbody tr:nth-child(odd) th {
     padding: 1.4rem 0.8rem;
     margin-left: auto;
     margin-right: auto;
+    font-family: $open-sans;
+    .head-title{
+        font-family: $inconsolata;
+    }
     @media (min-width: 38rem) {
         margin-top: 0;
         margin-left: 20%;
@@ -431,6 +462,7 @@ tbody tr:nth-child(odd) th {
 
 .bloghead {
     .bloghead-title {
+        font-family: $inconsolata;
         span {
             color: #BDBDBD;
         }

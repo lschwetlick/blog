@@ -1,7 +1,10 @@
 name:               "Lisa"
 description:        "General thoughts and specific hacks from the domains of science, cognition and programming"
 
-url:                "http://LisaSchwetlick.de/blog"
+blog_url:                "http://LisaSchwetlick.de/blog"
+lisa_url:                "http://LisaSchwetlick.de/"
+
+
 blogurl:            ""
 author:             "Lisa"
 email:              "mail@lisaschwetlick.de"

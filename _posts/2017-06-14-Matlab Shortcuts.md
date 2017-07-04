@@ -10,7 +10,7 @@ I regularly use three different editors for university and personal projects: RS
 <!--The hotkey that I was missing most of all was moving a line up or down (typically Ctrl+Shift+UpArrow/DownArrow).-->
 The hotkey that I was missing most of all was moving a line up or down (typically <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>Up</kbd> Ctrl+Shift+UpArrow/DownArrow).
 
-![Move line in Action](/resources/images/blog1/movelineinaction.gif "Move line")
+![Move line in Action](06-14Imgs/movelineinaction.gif "Move line")
 
 Effectively, every time I return to Matlab to program an experiment I feel like someone has tied the laces of my shoes together. So recently I tried to research the problem a little bit more and was surprised that not more people were complaining about this. After some experimenting, I found two promising hacks.
 
@@ -23,11 +23,11 @@ So, to be clear, you can make it do what you want but only use it as a hotkey wi
 
 Click "add shortcut" in the upper right corner of the interface.
 
-![New Shortcut](/resources/images/blog1/s1m.jpg "New Shortcut"){:class="shadow"}
+![New Shortcut](06-14Imgs/s1m.jpg "New Shortcut"){:class="shadow"}
 
 Put in a title and the script of what you want the shortcut to do. 
 
-![New Shortcut](/resources/images/blog1/s2s.jpg "New Shortcut"){:class="shadow"}
+![New Shortcut](06-14Imgs/s2s.jpg "New Shortcut"){:class="shadow"}
 
 In my case I wanted to move the lines up and down in the editor. I found a a script for that on [github](https://github.com/m-pilia/matlab-move-line/blob/master/matlab-move-line.m).
 Disclaimer: this code only works in 2016b or later because Matlab has changed how it treats strings (This is awesome by the way, strings in Matlab were always annoying to deal with).
@@ -73,17 +73,17 @@ clear currentEditor originalSelection
 
 I also went all-out and added little icons for each shortcut. I used the [Font Awesome](http://fontawesome.io/) symbols and just turned them into jpgs, which is the only format Matlab accepts. 
 
-![Line Up](/resources/images/blog1/up2.jpg "Line Up"){:height="50px" class="inline"}
-![Line Down](/resources/images/blog1/down2.jpg "Line Down"){:height="50px" class="inline"}
-![Execute Line](/resources/images/blog1/magic2.jpg "Execute Line"){:height="50px" class="inline"}
+![Line Up](06-14Imgs/up2.jpg "Line Up"){:height="50px" class="inline"}
+![Line Down](06-14Imgs/down2.jpg "Line Down"){:height="50px" class="inline"}
+![Execute Line](06-14Imgs/magic2.jpg "Execute Line"){:height="50px" class="inline"}
 
 So now the top corner of my Matlab looks a bit nicer.
 
-![Nicer Icons](/resources/images/blog1/s3s.jpg "Nicer Icons"){:class="shadow"}
+![Nicer Icons](06-14Imgs/s3s.jpg "Nicer Icons"){:class="shadow"}
 
 Pressing alt should now make little numbers show up next to the shortcuts. So <kbd>alt</kbd> + <kbd>1</kbd> will move a line up, <kbd>alt</kbd> + <kbd>2</kbd> down, and <kbd>alt</kbd> + <kbd>3</kbd> will execute the line.
 
-![Nicer Icons](/resources/images/blog1/s4small.jpg "Nicer Icons"){:class="shadow"}
+![Nicer Icons](06-14Imgs/s4small.jpg "Nicer Icons"){:class="shadow"}
 
 This is a nice-ish sort-of-solution, but it's still somewhat annoying that I can't just do this with any key combination I want.
 

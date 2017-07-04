@@ -18,7 +18,7 @@ Firstly, Matlab does have an native mechanism to perform custom actions at a key
 I very much get the impression that they are not designed to be used for something as banal as moving lines up and down. It seems like they are meant as a tool to quickly access frequently used, self-defined functions. But, as it turns out, you *can* use them to move a line. 
 
 Matlab shortcuts live in the top right corner of the interface. Adding a shortcut makes a little icon appear which can be accessed by clicking or by pressing alt and then the number that appears next to the icon.
-So, you can make it perform a custom action, but the hotkey binding is unchangeably <kbd>alt</kbd>+<kbd>some number<kbd>. So, I wasn't entirely convinced by this, but heres how to do it:
+So, you can make it perform a custom action, but the hotkey binding is unchangeably <kbd>alt</kbd>+<kbd>some number</kbd>. So, I wasn't entirely convinced by this, but heres how to do it:
 
 Click "add shortcut" in the upper right corner of the interface.
 

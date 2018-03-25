@@ -2,25 +2,25 @@
 title: reMarkably Hacky - academic paper reader
 ---
 
-*TL;DR: bought an e-reader. It didn't do what I wanted so i made [this](https://github.com/lschwetlick/maxio/tree/master/tools) and [this](https://github.com/lschwetlick/rMsync). Now it's not as bad anymore.*
+*TL;DR: bought an e-reader. Didn't do what I wanted so I made [this](https://github.com/lschwetlick/maxio/tree/master/tools) and [this](https://github.com/lschwetlick/rMsync). Now it's not as bad anymore.*
 
 For a while now I've been keeping an eye out for an e-reader suitable for reading academic papers. 
-Mainly I like the idea of reducing the chaos of loose sheets of paper floating around of my desk.
+Mainly I like the idea of reducing the chaos of loose sheets of paper floating around on my desk.
 It just turns out most e-readers are (understandably) much more suited to e-book formats than pdfs. 
 
 So I was looking for the following features:
 - Large enough to read regular pdfs without needing to zoom in (peferably A4 size)
 - E-ink screen, so I can read outside and reduce time spent staring at a screen
 - Has a pen, so I can mark the text and take notes in the margins
-- Allows me to get the PDF with the annotations back out of the device with OCR and stuff intact
+- Allows me to get the PDF with the annotations back out of the device with [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) and stuff intact
 
-So, long story short, I bought a [reMarkable](https://www.remarkable.com). Out of the box it falls tragically short of my expectations but after a bit of tinkering it fulfills my criteria. I mean I guess we could get into a whole story about how that time could have been spent organizing my printed papers and writing my thesis, not to mention used to money to buy an iPad and Apple pencil, but lets roll with it.
+So, long story short, I bought a [reMarkable](https://www.remarkable.com). Out of the box it falls tragically short of my expectations, but after a bit of tinkering it mostly fulfills my criteria. I mean, I guess we could get into a whole story about how that time could have been spent organizing my printed papers and writing my thesis, not to mention used the money to buy an iPad and Apple Pencil, but lets roll with it.
 
 ![]({{site.blog_url}}/resources/images/blog2/rM.jpg){:height="300px" class="shadow" class="center" }
 
-**Size**: The screen diagonal is 10.3". This ist just *barely* large enough for me to read papers comfortably. The resizing options on the device are not good.
+**Size**: The screen diagonal is 10.3". This ist just *barely* large enough for me to read papers comfortably. The resizing options on the device are slow and liable to mess up the annotations, so I generally avoid it.
 
-**E-ink**: Check. It's not brilliant or particularly snappy, but good enough for my use case
+**E-ink**: Check. It's not brilliant or particularly snappy, but good enough for my use case. Also, it gives it better battery life (although it doesn't last as long as originally promised)
 
 **Pen**: The drawing and writing is clearly what the developers spent all their time on. It's surprisingly fast and exact, except maybe at the very edges.
 
@@ -30,13 +30,13 @@ The intended use is to connect the device to a wifi and sync with their provided
 
 ![]({{site.blog_url}}/resources/images/blog2/rMSupport.png){:height="250px" class="shadow" class="center"}
 
-Spoiler Alert: it doesn't. At least not to any reasonable standard. The PDF export usually misses some of the pages, creates a file that far exceeds any reasonable expectations in filesize, and has no OCR (i.e. the text of the exported pdf can be neither searched nor marked). 
+Spoiler Alert: it doesn't. At least not to any reasonable standard. The PDF export usually misses some of the pages, creates a file that far exceeds any reasonable expectations in file size, and actually removes the OCR layer (i.e. the text of the exported pdf can be neither searched nor marked). 
 
 The PNG export, while at least exporting all the pages, creates images of random image sizes, so if you merge them into a pdf if might look something like this:
 
 ![]({{site.blog_url}}/resources/images/blog2/pngsizes.png){:height="500px" class="shadow" class="center"}
 
-All of this quite apart from the fact that I have no interest in storing my data on this companies cloud.
+All of this quite apart from the fact that I have no interest in storing my data on this company's cloud.
 
 At this point I was half-conviced I would send it back and buy a small iPad with a pen (price point is not all that different). But I do like the e-ink screen and the fact that there are fewer distractions,  so here is the system I came up with to turn the reMarkable into an academic paper reading device.
 
@@ -61,17 +61,17 @@ scp root@10.11.99.1:/home/root/.local/share/remarkable/xochitl /directory/of/you
 
 Now I'm not going to repeat all the things that make the reMarkable tick, there's plenty of that in the [reMarkable Wiki](http://remarkablewiki.com/) and on the [reHackable Github](https://github.com/reHackable) and on other blogs like [this one](http://blog.lucafluri.ch/2017-11-21/customizing-remarkableTablet).
 
-Suffice it to say, that the reMarkable saves annotation information in their custom format: .lines files, and never actually touches the pdf (in the course of this project I've been told that pdf if actually a way overloaded, terribly complicated file format that only very few people want to mess with and that thats why we can't just add a layer of annotations). 
+Suffice it to say, that the reMarkable saves annotation information in their custom format: .lines files, and never actually touches the pdf (in the course of this project I've been told that pdf is actually a way overloaded, terribly complicated file format that only very few people want to mess with and that thats why we can't just add a layer of annotations). 
 
-In the "xochitl" (great name btw) folder on the reMarkable you will find each pdf file, conveniently renamed with a hash, a file of meta information and a .lines file.
+In the ["xochitl"](https://dragly.org/2017/12/01/developing-for-the-remarkable/index.html) (great name btw) folder on the reMarkable you will find each pdf file, conveniently renamed with a hash, a file of meta information and a .lines file.
 
 ![]({{site.blog_url}}/resources/images/blog2/rMFilestructure.png) 
 
 ### PDF export
 
-Now, [reHackable](https://github.com/reHackable) have already decoded the .lines format and written a function that can turn .lines files into svgs. This means you end up with all the marks you made with the pen in an svg (seperate from the original pdf).So this is super useful for quick drawings and sketches but not yet so helpful for the annotation problem.
+Now, [reHackable](https://github.com/reHackable) have already decoded the .lines format and written a [function](https://github.com/reHackable/maxio/tree/master/tools) that can turn .lines files into svgs. This means you end up with all the marks you made with the pen in an svg (seperate from the original pdf). So, this is super useful for quick drawings and sketches but not yet so helpful for the annotation problem.
 
-[Someone else](https://github.com/phil777/maxio) had already had the idea that to use the python version of the library Cairo to draw the contents of the .lines file (using the reHackable's decoding) onto a blank pdf of the correct dimensions.
+[Someone else](https://github.com/phil777/maxio) already had the idea to use the python version of the library [Cairo](https://cairographics.org/pycairo/) to draw the contents of the .lines file (using the reHackable's decoding) onto a blank pdf of the correct dimensions.
 
 The idea is that this annotation pdf can then be "stamped" onto the original using PDftk,
 
@@ -82,14 +82,14 @@ pdftk input.pdf multistamp annot.pdf output final.pdf
 leaving you with the original OCR'd file with the annotations just pasted over the top.
 
 The original code that I found in some git issue thread surprisingly worked pretty okay just as it was!
-I branched  it, fixed some issues with it and added some funtionality, but the [rm2pdf](https://github.com/lschwetlick/maxio/tree/master/tools) function works pretty well now . Cairo doesnt do dynamical pen width of line structure so well, but I haven't found that too bothersome for highlighting and annotating text.
-For drawings and stuff I would recommend the [rm2pdf](https://github.com/lschwetlick/maxio/tree/master/tools) function though.
+I branched  it, fixed some issues with it and added some funtionality, but the [rm2pdf](https://github.com/lschwetlick/maxio/tree/master/tools) function works pretty well now. Cairo doesnt do dynamical pen width of line structure so well, but I haven't found that too bothersome for highlighting and annotating text.
+For drawings and stuff I would recommend the [rm2svg](https://github.com/lschwetlick/maxio/tree/master/tools) function though.
 
 I had originally hoped to be able to use real pdf annotations, that I could edit on the computer as well. This doesnt seem particularly realistic right now, not least because the remarkable can't actually display standard pdf annotations. 
 
 ### Syncing
 
-Now that I had figured out that I can export annotated files, all that was left was to write a script I can start when I plug the reMarkable in, to sync the contents with a predefined directory on my computer  [(Find it here)](https://github.com/lschwetlick/rMsync). 
+Once I had figured out how to export annotated files, all that was left was to write a script I can start when I plug the reMarkable in, to sync the contents with a predefined directory on my computer  [(find it here)](https://github.com/lschwetlick/rMsync). 
 
 I went with python because I much prefer it over shell scripts, but I have since been informed that using os.system("whatever terminal command") is deprecated and frowned upon. It does do exactly what I want though, so... sorry I guess.
 
@@ -119,4 +119,4 @@ I made a sleeve. The 75€ for the original sleeve seemed kind of steep and its 
 
 ### Extra 2
 I wanted a backup pen, because my posessions have an upsetting habit of being where I am not. 
-[This one](https://www.amazon.de/gp/product/B06Y3F5W87/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1) feels bad in your hand, is made of cheap plastic, and is way too small. But it does work in a pinch and, at 4,50€ a piece, is dirt cheap.
+[This one](https://www.amazon.de/gp/product/B06Y3F5W87/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1) feels bad in your hand, is made of cheap plastic, and is way too small. But it does work in a pinch and, at 4.50€ a piece, is dirt cheap.

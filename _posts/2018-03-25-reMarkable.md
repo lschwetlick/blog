@@ -16,7 +16,7 @@ So I was looking for the following features:
 
 So, long story short, I bought a [reMarkable](https://www.remarkable.com). Out of the box it falls tragically short of my expectations but after a bit of tinkering it fulfills my criteria. I mean I guess we could get into a whole story about how that time could have been spent organizing my printed papers and writing my thesis, not to mention used to money to buy an iPad and Apple pencil, but lets roll with it.
 
-![]({{site.blog_url}}/resources/images/blog2/rM.jpg){:height="250px" class="shadow center", }
+![]({{site.blog_url}}/resources/images/blog2/rM.jpg){:height="300px" class="shadow" class="center" }
 
 **Size**: The screen diagonal is 10.3". This ist just *barely* large enough for me to read papers comfortably. The resizing options on the device are not good.
 
@@ -28,13 +28,13 @@ So, long story short, I bought a [reMarkable](https://www.remarkable.com). Out o
 The app is just terrible. 
 The intended use is to connect the device to a wifi and sync with their provided cloud service. The app also connects to that service and lets you upload and view files. It also lets you export files to pdf and png (or so I was informed by their customer support before buying).
 
-![]({{site.blog_url}}/resources/images/blog2/rMSupport.png){:height="250px" class="shadow"}
+![]({{site.blog_url}}/resources/images/blog2/rMSupport.png){:height="250px" class="shadow" class="center"}
 
 Spoiler Alert: it doesn't. At least not to any reasonable standard. The PDF export usually misses some of the pages, creates a file that far exceeds any reasonable expectations in filesize, and has no OCR (i.e. the text of the exported pdf can be neither searched nor marked). 
 
 The PNG export, while at least exporting all the pages, creates images of random image sizes, so if you merge them into a pdf if might look something like this:
 
-![]({{site.blog_url}}/resources/images/blog2/pngsizes.png){:height="500px" class="shadow"}
+![]({{site.blog_url}}/resources/images/blog2/pngsizes.png){:height="500px" class="shadow" class="center"}
 
 All of this quite apart from the fact that I have no interest in storing my data on this companies cloud.
 
@@ -115,8 +115,8 @@ Fair warning though, it's developed and maintained by nice people as a side proj
 ### Extra
 
 I made a sleeve. The 75€ for the original sleeve seemed kind of steep and its super easy to do. One large piece of felt and a thick rubber band gave me this:
-![]({{site.blog_url}}/resources/images/blog2/sleeve.jpg){:height="500px" class="shadow"}
+![]({{site.blog_url}}/resources/images/blog2/sleeve.jpg){:height="500px" class="shadow"  class="center"}
 
 ### Extra 2
 I wanted a backup pen, because my posessions have an upsetting habit of being where I am not. 
-[This one](https://www.amazon.de/gp/product/B06Y3F5W87/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1) feels bad in your hand, is made of cheap plastic and is way too small. But it does work in a pinch and,at 4,50€ a piece, is dirt cheap.
+[This one](https://www.amazon.de/gp/product/B06Y3F5W87/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1) feels bad in your hand, is made of cheap plastic, and is way too small. But it does work in a pinch and, at 4,50€ a piece, is dirt cheap.

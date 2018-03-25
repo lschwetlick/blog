@@ -18,7 +18,7 @@ So, long story short, I bought a [reMarkable](https://www.remarkable.com). Out o
 
 ![]({{site.blog_url}}/resources/images/blog2/rM.jpg){:height="300px" class="shadow" class="center" }
 
-**Size**: The screen diagonal is 10.3". This ist just *barely* large enough for me to read papers comfortably. The resizing options on the device are slow and liable to mess up the annotations, so I generally avoid it.
+**Size**: The screen diagonal is 10.3". This ist just *barely* large enough for me to read papers comfortably. The resizing options on the device are slow and liable to mess up the annotations, so I generally avoid resizing.
 
 **E-ink**: Check. It's not brilliant or particularly snappy, but good enough for my use case. Also, it gives it better battery life (although it doesn't last as long as originally promised)
 
@@ -73,7 +73,7 @@ Now, [reHackable](https://github.com/reHackable) have already decoded the .lines
 
 [Someone else](https://github.com/phil777/maxio) already had the idea to use the python version of the library [Cairo](https://cairographics.org/pycairo/) to draw the contents of the .lines file (using the reHackable's decoding) onto a blank pdf of the correct dimensions.
 
-The idea is that this annotation pdf can then be "stamped" onto the original using PDftk,
+The idea is that this annotation pdf can then be "stamped" onto the original using [PDftk](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/),
 
 ```
 pdftk input.pdf multistamp annot.pdf output final.pdf 

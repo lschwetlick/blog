@@ -131,7 +131,6 @@ p {
     margin: 0 0 1rem;
 }
 
-ul,
 ol,
 dl {
     margin-left: 1.5rem;
@@ -151,6 +150,7 @@ ul {
     padding-left: 0;
     li {
         margin-bottom: .25rem;
+        margin-left: 1.5em;
     }
     ul,
     ol {

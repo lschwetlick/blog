@@ -22,7 +22,7 @@ background:         "/resources/images/lisaXS.jpg"
 paginate:           5
 paginate_path:      "/page:num/"
 
-baseurl:            ""
+baseurl:            "http://lisaschwetlick.de/blog/"
 permalink:          /:year/:month/:day/:title/
 
 markdown:           kramdown

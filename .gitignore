@@ -1,3 +1,7 @@
 _site/
 .sass-cache/
 .jekyll-metadata
+
+resources/images/blog2/\.DS_Store
+
+resources/images/\.DS_Store

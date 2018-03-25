@@ -1,4 +1,7 @@
-# reMarkably Hacky: an academic paper reader
+---
+title: reMarkably Hacky - academic paper reader
+---
+
 *TL;DR: bought an e-reader. It didnt do what I wanted so i made [this](https://github.com/lschwetlick/maxio/tree/master/tools) and [this](https://github.com/lschwetlick/rMsync). Now it's not as bad anymore.*
 
 For a while now I've been keeping an eye out for an e-reader suitable for reading academic papers. 

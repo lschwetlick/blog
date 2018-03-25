@@ -16,7 +16,7 @@ So I was looking for the following features:
 
 So, long story short, I bought a [reMarkable](https://www.remarkable.com). Out of the box it falls tragically short of my expectations but after a bit of tinkering it fulfills my criteria. I mean I guess we could get into a whole story about how that time could have been spent organizing my printed papers and writing my thesis, not to mention used to money to buy an iPad and Apple pencil, but lets roll with it.
 
-![]({{site.blog_url}}/resources/images/blog2/rM.jpg)
+![]({{site.blog_url}}/resources/images/blog2/rM.jpg){:height="250px" class="shadow center", }
 
 **Size**: The screen diagonal is 10.3". This ist just *barely* large enough for me to read papers comfortably. The resizing options on the device are not good.
 
@@ -28,13 +28,13 @@ So, long story short, I bought a [reMarkable](https://www.remarkable.com). Out o
 The app is just terrible. 
 The intended use is to connect the device to a wifi and sync with their provided cloud service. The app also connects to that service and lets you upload and view files. It also lets you export files to pdf and png (or so I was informed by their customer support before buying).
 
-![]({{site.blog_url}}/resources/images/blog2/rMSupport.png)
+![]({{site.blog_url}}/resources/images/blog2/rMSupport.png){:height="250px" class="shadow"}
 
 Spoiler Alert: it doesn't. At least not to any reasonable standard. The PDF export usually misses some of the pages, creates a file that far exceeds any reasonable expectations in filesize, and has no OCR (i.e. the text of the exported pdf can be neither searched nor marked). 
 
 The PNG export, while at least exporting all the pages, creates images of random image sizes, so if you merge them into a pdf if might look something like this:
 
-![]({{site.blog_url}}/resources/images/blog2/pngsizes.png)
+![]({{site.blog_url}}/resources/images/blog2/pngsizes.png){:height="500px" class="shadow"}
 
 All of this quite apart from the fact that I have no interest in storing my data on this companies cloud.
 
@@ -52,7 +52,9 @@ The reMarkable kindly allows an alternative access point to the app. If you plug
 ```
 ssh root@10.11.99.1
 ```
+
 ...Or just copy the entire directory over to be able to play with it locally:
+
 ```
 scp root@10.11.99.1:/home/root/.local/share/remarkable/xochitl /directory/of/your/choice
 ```
@@ -64,15 +66,19 @@ Suffice it to say, that the reMarkable saves annotation information in their cus
 In the "xochitl" (great name btw) folder on the reMarkable you will find each pdf file, conveniently renamed with a hash, a file of meta information and a .lines file.
 
 ![]({{site.blog_url}}/resources/images/blog2/rMFilestructure.png) 
+
 ### PDF export
+
 Now, [reHackable](https://github.com/reHackable) have already decoded the .lines format and written a function that can turn .lines files into svgs. This means you end up with all the marks you made with the pen in an svg (seperate from the original pdf).So this is super useful for quick drawings and sketches but not yet so helpful for the annotation problem.
 
 [Someone else](https://github.com/phil777/maxio) had already had the idea that to use the python version of the library Cairo to draw the contents of the .lines file (using the reHackable's decoding) onto a blank pdf of the correct dimensions.
 
 The idea is that this annotation pdf can then be "stamped" onto the original using PDftk,
+
 ```
 pdftk input.pdf multistamp annot.pdf output final.pdf 
 ```
+
 leaving you with the original OCR'd file with the annotations just pasted over the top.
 
 The original code that I found in some git issue thread surprisingly worked pretty okay just as it was!
@@ -82,6 +88,7 @@ For drawings and stuff I would recommend the [rm2pdf](https://github.com/lschwet
 I had originally hoped to be able to use real pdf annotations, that I could edit on the computer as well. This doesnt seem particularly realistic right now, not least because the remarkable can't actually display standard pdf annotations. 
 
 ### Syncing
+
 Now that I had figured out that I can export annotated files, all that was left was to write a script I can start when I plug the reMarkable in, to sync the contents with a predefined directory on my computer  [(Find it here)](https://github.com/lschwetlick/rMsync). 
 
 I went with python because I much prefer it over shell scripts, but I have since been informed that using os.system("whatever terminal command") is deprecated and frowned upon. It does do exactly what I want though, so... sorry I guess.
@@ -106,9 +113,10 @@ To be honest, it also gets a point in my book for not attempting to be a social 
 Fair warning though, it's developed and maintained by nice people as a side project and it does sometimes crash (never anyhing that a program restart doesn't cure).
 
 ### Extra
-I made a sleeve. The 75€ for the original sleeve seemed kind of steep and its super easy to do. 1 large piece of felt and a thick rubber band gave me this:
-![]({{site.blog_url}}/resources/images/blog2/sleeve)
+
+I made a sleeve. The 75€ for the original sleeve seemed kind of steep and its super easy to do. One large piece of felt and a thick rubber band gave me this:
+![]({{site.blog_url}}/resources/images/blog2/sleeve.jpg){:height="500px" class="shadow"}
 
 ### Extra 2
 I wanted a backup pen, because my posessions have an upsetting habit of being where I am not. 
-[This one](https://www.amazon.de/gp/product/B06Y3F5W87/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1) feels bad in your hand, is made of cheap plastic and is way too small. But it does work in a pinch and is dirt cheap with 4,50€ a piece.
+[This one](https://www.amazon.de/gp/product/B06Y3F5W87/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1) feels bad in your hand, is made of cheap plastic and is way too small. But it does work in a pinch and,at 4,50€ a piece, is dirt cheap.

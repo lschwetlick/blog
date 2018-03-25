@@ -29,7 +29,7 @@ markdown:           kramdown
 
 nav:
   - name:           "About"
-    href:           "/about/index.html"
+    href:           "/blog/about/index.html"
   # - name:           "Home"
   #   href:           ""
 

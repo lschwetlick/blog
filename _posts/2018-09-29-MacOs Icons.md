@@ -1,4 +1,6 @@
-# Custom MacOs Folder Icons: an excersize in futility
+---
+title: Custom MacOs Folder Icons- an excersize in futility
+---
 
 Every once in a while, when I'm in the right frame of mind, I fall down a rabbit hole and I just enjoy the ride. 
 At some point an hour or two later I'll look up and see what I've done and realize I've just invested a ton of time into a project that's completely over-dimensioned, kind of useless and could have been done in about 20 minutes by hand, and probably gotten a better result.

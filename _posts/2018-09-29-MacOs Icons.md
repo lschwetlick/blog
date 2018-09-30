@@ -112,7 +112,7 @@ def makeIcns(icon_name, icon):
 ## The Disappointment
 Now all of this might have been pretty neat. But somehow, quite apart from the fact that the color is still off, somehow my icns file does not get displayed as nicely as the default ones. It looks like the resolution is worse or something, but I havent figured it out. 
 
-![]({{site.blog_url}}/resources/images/blog3/folder_comp.png){:height="100%" class="shadow" class="center" }
+![]({{site.blog_url}}/resources/images/blog3/folder_comp.png){:height="100px" class="shadow" class="center" }
 
 ![]({{site.blog_url}}/resources/images/blog3/folder_comp2.png){:height="100%" class="shadow" class="center" }
 

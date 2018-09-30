@@ -8,7 +8,7 @@ So last week, preparing for the new semester, I was doing a good old digital dec
 
 A couple of specific folders that Apple thought were important, though, have different little folder icons with a symbol embossed on them: Downloads and Documents and Music and so on. 
 
-![]({{site.blog_url}}/resources/images/blog3/default_folder_icons.png){:height="300px" class="shadow" class="center" }
+![]({{site.blog_url}}/resources/images/blog3/default_folder_icons.png){:height="100%" class="shadow" class="center" }
 
 After a little research I found out that Apple saves all it's icons, including the generic folder icon, under
 
@@ -64,7 +64,7 @@ output = cv.merge([nB.astype(float), nG.astype(float), nR.astype(float), fA.asty
 
 Well, this is what I got. The color is not all that similar to the default Apple folders.
 
-![]({{site.blog_url}}/resources/images/blog3/result_equation.png){:height="300px" class="shadow" class="center" }
+![]({{site.blog_url}}/resources/images/blog3/result_equation.png){:height="100%" class="shadow" class="center" }
 
 ## ICNS
 This part is really just a matter of resizing and saving the png of the result and then zipping it into an icns file.
@@ -112,9 +112,9 @@ def makeIcns(icon_name, icon):
 ## The Disappointment
 Now all of this might have been pretty neat. But somehow, quite apart from the fact that the color is still off, somehow my icns file does not get displayed as nicely as the default ones. It looks like the resolution is worse or something, but I havent figured it out. 
 
-![]({{site.blog_url}}/resources/images/blog3/folder_comp.png){:height="300px" class="shadow" class="center" }
+![]({{site.blog_url}}/resources/images/blog3/folder_comp.png){:height="100%" class="shadow" class="center" }
 
-![]({{site.blog_url}}/resources/images/blog3/folder_comp2.png){:height="300px" class="shadow" class="center" }
+![]({{site.blog_url}}/resources/images/blog3/folder_comp2.png){:height="100%" class="shadow" class="center" }
 
 In the second view you can barely tell anything is in the folder icon at all and it mostly differs from the other icons by not having enough contrast or a lower resolution or something. If anyone knows why that is, let me know, I'm stumped!
 

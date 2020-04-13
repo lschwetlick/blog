@@ -36,7 +36,7 @@ Commands (or control sequences) are preceded by a backslash. They can be
 
     A thing that I find hard to remember is which command is a declaration (i.e. changes everything that comes after forever) like `\large` and which take the text as an input and only format that, like `\textbf{my fat text}`. This can get particularly nasty because curly braces do double duty: they indicate parameters in a command but they also define **groups** (see below).
 
-    ![]({{site.blog_url}}/resources/images/blog5/braces_a.png){:width="500px" class="shadow" class="center" }
+    ![]({{site.blog_url}}/resources/images/blog5/braces_a.png){style="width=500px; class='shadow'; class='center';"}
    
     The braces put the word "big" in its own group (that has no special properties). The size change applies to all following words.
 

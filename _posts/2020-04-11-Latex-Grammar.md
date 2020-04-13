@@ -1,5 +1,5 @@
 ---
-title:  Latex: commands, declarations, groups, environments
+title:  Latex - commands, declarations, groups, environments
 ---
 
 Just like all the PhD students I know, I've beeen using Latex as a a collection of boilerplate code combined with frantic googling. At some point recently I got really stuck and went to the documentation to try and understand some of the grammar. I feel like it helped me set straight why sometimes things don't work when I could have sworn they should. And it made googling my problems a bit easier. These are the notes I tool when straying into LaTeX land.

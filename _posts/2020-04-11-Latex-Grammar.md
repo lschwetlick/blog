@@ -36,23 +36,23 @@ Commands (or control sequences) are preceded by a backslash. They can be
 
     A thing that I find hard to remember is which command is a declaration (i.e. changes everything that comes after forever) like `\large` and which take the text as an input and only format that, like `\textbf{my fat text}`. This can get particularly nasty because curly braces do double duty: they indicate parameters in a command but they also define **groups** (see below).
 
-    ![]({{site.blog_url}}/resources/images/blog5/braces_a.png){:width="400px" class="shadow" class="center" }
+    ![]({{site.blog_url}}/resources/images/blog5/braces_a.png){:width="300px" class="shadow" class="center" }
    
-    The braces put the word "big" in its own group (that has no special properties). The size change applies to all following words.
+    a) The braces put the word "big" in its own group (that has no special properties). The size change applies to all following words.
 
-    ![]({{site.blog_url}}/resources/images/blog5/braces_b.png){:width="400px" class="shadow" class="center" }
+    ![]({{site.blog_url}}/resources/images/blog5/braces_b.png){:width="300px" class="shadow" class="center" }
     
-    The braces after the declarations are empty and all they do is stop it from gobbling subsequent whitespace. The size change applies to all following words.
+    b) The braces after the declarations are empty and all they do is stop it from gobbling subsequent whitespace. The size change applies to all following words.
 
-    ![]({{site.blog_url}}/resources/images/blog5/braces_c.png){:width="400px" class="shadow" class="center" }
+    ![]({{site.blog_url}}/resources/images/blog5/braces_c.png){:width="300px" class="shadow" class="center" }
     
-    The braces contain the size change to a group which contains only the word "huge". The size change only applies within the group.
+    c) The braces contain the size change to a group which contains only the word "huge". The size change only applies within the group.
 
     As you can see from the first example, if I'm not sure if `\huge`is a declaration or a parametrized command, I can get unexpected results, because the curly braces after a command keyword can have different meanings based on whether the command expects parameters or not. In the first example they are interpreted as the start of a group.
 
-    But wait- its gets weirder: if you have a command like `\textbf` that expects a parameter and don't give it one, it affects the first letter that comes after it.
+    But wait- its gets weirder: d) if you have a command like `\textbf` that expects a parameter and don't give it one, it affects the first letter that comes after it.
     
-    ![]({{site.blog_url}}/resources/images/blog5/braces_d.png){:width="400px" class="shadow" class="center" }
+    ![]({{site.blog_url}}/resources/images/blog5/braces_d.png){:width="300px" class="shadow" class="center" }
 
 ## Groups and environments
 **Groups** are a way of limiting the reach of certain commands. They are evoked simply by curly braces. Environments are also a type of group. You can hierarchically define groups as long as you can keep track of all your braces. Settings/declarations from an group higher up the hierarchy are carried over, into the children. changes in the children do not affect the parent groups.
@@ -67,7 +67,7 @@ To make new commands use `\newcommand{name}[num]{definition}`.
 
         `\newcommand{\enquote}[1]{``#1''} %put in the right quotes`
 
-![]({{site.blog_url}}/resources/images/blog5/enquote.png){:width="400px" class="shadow" class="center" }
+![]({{site.blog_url}}/resources/images/blog5/enquote.png){:width="300px" class="shadow" class="center" }
 
 To make new environments use `\newenvironment{name}[num]{before}{after}`.
 **example:** drawing a box around the contents
@@ -84,7 +84,7 @@ To make new environments use `\newenvironment{name}[num]{before}{after}`.
             \end{center}
             }
 
-![]({{site.blog_url}}/resources/images/blog5/box.png){:width="400px" class="shadow" class="center" }
+![]({{site.blog_url}}/resources/images/blog5/box.png){:width="300px" class="shadow" class="center" }
 
 ## Centering things 3 ways
 So considering all of the above we can achieve the same thing in a variety of ways:

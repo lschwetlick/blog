@@ -1,8 +1,8 @@
 name:               "Lisa"
 description:        "General thoughts and specific hacks from the domains of science, cognition and programming"
 
-blog_url:                "http://LisaSchwetlick.de/blog"
-lisa_url:                "http://LisaSchwetlick.de/"
+blog_url:                "https://LisaSchwetlick.de/blog"
+lisa_url:                "https://LisaSchwetlick.de/"
 
 
 blogurl:            ""
@@ -22,7 +22,7 @@ background:         "/resources/images/lisaXS.jpg"
 paginate:           5
 paginate_path:      "/page:num/"
 
-baseurl:            "http://lisaschwetlick.de/blog/"
+baseurl:            "https://lisaschwetlick.de/blog/"
 permalink:          /:year/:month/:day/:title/
 
 markdown:           kramdown

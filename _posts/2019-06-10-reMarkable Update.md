@@ -2,7 +2,7 @@
 title: Update on the ReMarkable Situation
 ---
 
-This is just a quick update on how things have developed in 2019. Unfortunately some of the things outlined in the previous [post](http://lisaschwetlick.de/blog/2018/03/25/reMarkable/) I wrote on the subject have since been changed. ReMarkable changed their file format, which broke all the cairo code I'd written. Its probably not unsalvageable but I haven't has the time to fix it. Someone [else](https://github.com/jmiserez/maxio/blob/ee15bcc86e4426acd5fc70e717468862dce29fb8/tmp-rm16-ericsfraga-rm2svg.py) fixed the rm2svg script though, so that gives me something to work with. 
+This is just a quick update on how things have developed in 2019. Unfortunately some of the things outlined in the previous [post](https://lisaschwetlick.de/blog/2018/03/25/reMarkable/) I wrote on the subject have since been changed. ReMarkable changed their file format, which broke all the cairo code I'd written. Its probably not unsalvageable but I haven't has the time to fix it. Someone [else](https://github.com/jmiserez/maxio/blob/ee15bcc86e4426acd5fc70e717468862dce29fb8/tmp-rm16-ericsfraga-rm2svg.py) fixed the rm2svg script though, so that gives me something to work with. 
 My version of the conversion scripts still live [in my maxio fork](https://github.com/lschwetlick/maxio), and thats where I will be pushing my updates.
 
 # How converting files works now (Workflow)

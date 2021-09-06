@@ -1,7 +1,6 @@
 name:               "Lisa"
 description:        "General thoughts and specific hacks from the domains of science, cognition and programming"
 
-
 author:             "Lisa"
 email:              "mail@lisaschwetlick.de"
 twitter:            "Enemy_Anemone"
@@ -17,7 +16,8 @@ background:         "resources/images/lisaXS.jpg"
 paginate:           5
 paginate_path:      "/page:num/"
 
-
+baseurl: ""
+url: ""
 
 
 markdown:           kramdown

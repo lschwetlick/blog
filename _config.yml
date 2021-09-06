@@ -16,9 +16,9 @@ background:         "resources/images/lisaXS.jpg"
 paginate:           5
 paginate_path:      "/page:num/"
 
-url: 		            https://lisaschwetlick.de/blog
+url: 		            https://lisaschwetlick.de/blog/
 lisa_url:           https://lisaschwetlick.de
-blog_url:           https://lisaschwetlick.de/blog
+blog_url:           https://lisaschwetlick.de/blog/
 
 
 markdown:           kramdown

@@ -11,8 +11,8 @@ github:             "lschwetlick"
 facebook:           "AnEnemyAnemone"
 
 
-avatar_img:         "/resources/images/lisaXS.jpg"
-background:         "/resources/images/lisaXS.jpg"
+avatar_img:         "blog/resources/images/lisaXS.jpg"
+background:         "blog/resources/images/lisaXS.jpg"
 
 paginate:           5
 paginate_path:      "/page:num/"

@@ -17,10 +17,10 @@ background:         "/resources/images/lisaXS.jpg"
 paginate:           5
 paginate_path:      "/page:num/"
 
-baseurl:            ""
+baseurl:            "/blog/"
 permalink:          /:year/:month/:day/:title/
-domain: 		   lisaschwetlick.de/blog/
-url: 		   https://lisaschwetlick.de/blog/
+domain: 		   lisaschwetlick.de
+url: 		   https://lisaschwetlick.de
 
 
 

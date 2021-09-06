@@ -11,14 +11,14 @@ github:             "lschwetlick"
 facebook:           "AnEnemyAnemone"
 
 
-avatar_img:         "lisaschwetlick.de/blog/resources/images/lisaXS.jpg"
-background:         "lisaschwetlick.de/blog/resources/images/lisaXS.jpg"
+avatar_img:         "resources/images/lisaXS.jpg"
+background:         "resources/images/lisaXS.jpg"
 
 paginate:           5
 paginate_path:      "/page:num/"
 
 baseurl:            "lisaschwetlick.de/blog/"
-permalink:          :baseurl/:year/:month/:day/:title/
+permalink:          :year/:month/:day/:title/
 domain: 		        lisaschwetlick.de
 url: 		            https://lisaschwetlick.de
 

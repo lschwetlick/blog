@@ -17,10 +17,6 @@ background:         "resources/images/lisaXS.jpg"
 paginate:           5
 paginate_path:      "/page:num/"
 
-baseurl:            "lisaschwetlick.de/blog"
-permalink:          "/blog/:year/:month/:day/:title/"
-domain: 		        lisaschwetlick.de/blog
-url: 		            https://lisaschwetlick.de/blog
 
 
 

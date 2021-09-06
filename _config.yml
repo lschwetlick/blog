@@ -19,7 +19,7 @@ paginate_path:      "/page:num/"
 
 baseurl:            "lisaschwetlick.de/blog/"
 permalink:          /:year/:month/:day/:title/
-domain: 		        lisaschwetlick.de
+domain: 		        lisaschwetlick.de/blog/
 url: 		            https://lisaschwetlick.de/blog/
 
 

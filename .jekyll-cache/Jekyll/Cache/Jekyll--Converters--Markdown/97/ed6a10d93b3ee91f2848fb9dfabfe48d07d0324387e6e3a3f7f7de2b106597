@@ -1,0 +1,119 @@
+I"�.<p><em>TL;DR: bought an e-reader. Didn’t do what I wanted so I made <a href="https://github.com/lschwetlick/maxio/tree/master/tools">this</a> and <a href="https://github.com/lschwetlick/rMsync">this</a>. Now it’s not as bad anymore.</em></p>
+
+<p>For a while now I’ve been keeping an eye out for an e-reader suitable for reading academic papers. 
+Mainly I like the idea of reducing the chaos of loose sheets of paper floating around on my desk.
+It just turns out most e-readers are (understandably) much more suited to e-book formats than pdfs.</p>
+
+<p>So I was looking for the following features:</p>
+<ul>
+  <li>Large enough to read regular pdfs without needing to zoom in (peferably A4 size)</li>
+  <li>E-ink screen, so I can read outside and reduce time spent staring at a screen</li>
+  <li>Has a pen, so I can mark the text and take notes in the margins</li>
+  <li>Allows me to get the PDF with the annotations back out of the device with <a href="https://en.wikipedia.org/wiki/Optical_character_recognition">OCR</a> and stuff intact</li>
+</ul>
+
+<p>So, long story short, I bought a <a href="https://www.remarkable.com">reMarkable</a>. Out of the box it falls tragically short of my expectations, but after a bit of tinkering it mostly fulfills my criteria. I mean, I guess we could get into a whole story about how that time could have been spent organizing my printed papers and writing my thesis, not to mention used the money to buy an iPad and Apple Pencil, but lets roll with it.</p>
+
+<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog2/rM.jpg" alt="" height="300px" class="center" /></p>
+
+<p><strong>Size</strong>: The screen diagonal is 10.3”. This ist just <em>barely</em> large enough for me to read papers comfortably. The resizing options on the device are slow and liable to mess up the annotations, so I generally avoid resizing.</p>
+
+<p><strong>E-ink</strong>: Check. It’s not brilliant or particularly snappy, but good enough for my use case. Also, it gives it better battery life (although it doesn’t last as long as originally promised)</p>
+
+<p><strong>Pen</strong>: The drawing and writing is clearly what the developers spent all their time on. It’s surprisingly fast and exact, except maybe at the very edges.</p>
+
+<p><strong>Handling Files</strong>: This is the part that made me seriously sad. And then made me feel a strong urge to fix it.
+The app is just terrible. 
+The intended use is to connect the device to a wifi and sync with their provided cloud service. The app also connects to that service and lets you upload and view files. It also lets you export files to pdf and png (or so I was informed by their customer support before buying).</p>
+
+<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog2/rMSupport.png" alt="" height="250px" class="center" /></p>
+
+<p>Spoiler Alert: it doesn’t. At least not to any reasonable standard. The PDF export usually misses some of the pages, creates a file that far exceeds any reasonable expectations in file size, and actually removes the OCR layer (i.e. the text of the exported pdf can be neither searched nor marked).</p>
+
+<p>The PNG export, while at least exporting all the pages, creates images of random image sizes, so if you merge them into a pdf if might look something like this:</p>
+
+<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog2/pngsizes.png" alt="" height="500px" class="center" /></p>
+
+<p>All of this quite apart from the fact that I have no interest in storing my data on this company’s cloud.</p>
+
+<p>At this point I was half-conviced I would send it back and buy a small iPad with a pen (price point is not all that different). But I do like the e-ink screen and the fact that there are fewer distractions,  so here is the system I came up with to turn the reMarkable into an academic paper reading device.</p>
+
+<h2 id="how-i-made-it-workable">How I made it workable</h2>
+
+<p>So the reMarkable was missing two critical features for my purposes.</p>
+
+<ol>
+  <li>A way to export pdfs that keeps the OCR and the notes</li>
+  <li>A way to sync the reMarkable with my folder of papers on my computer without using the rM cloud</li>
+</ol>
+
+<p>The reMarkable kindly allows an alternative access point to the app. If you plug in into your computer you can <code class="language-plaintext highlighter-rouge">ssh</code> into it from the commandline using the credentials given on the about page.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh root@10.11.99.1
+</code></pre></div></div>
+
+<p>…Or just copy the entire directory over to be able to play with it locally:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp root@10.11.99.1:/home/root/.local/share/remarkable/xochitl /directory/of/your/choice
+</code></pre></div></div>
+
+<p>Now I’m not going to repeat all the things that make the reMarkable tick, there’s plenty of that in the <a href="http://remarkablewiki.com/">reMarkable Wiki</a> and on the <a href="https://github.com/reHackable">reHackable Github</a> and on other blogs like <a href="http://blog.lucafluri.ch/2017-11-21/customizing-remarkableTablet">this one</a>.</p>
+
+<p>Suffice it to say, that the reMarkable saves annotation information in their custom format: .lines files, and never actually touches the pdf (in the course of this project I’ve been told that pdf is actually a way overloaded, terribly complicated file format that only very few people want to mess with and that thats why we can’t just add a layer of annotations).</p>
+
+<p>In the <a href="https://dragly.org/2017/12/01/developing-for-the-remarkable/index.html">“xochitl”</a> (great name btw) folder on the reMarkable you will find each pdf file, conveniently renamed with a hash, a file of meta information and a .lines file.</p>
+
+<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog2/rMFilestructure.png" alt="" /></p>
+
+<h3 id="pdf-export">PDF export</h3>
+
+<p>Now, <a href="https://github.com/reHackable">reHackable</a> have already decoded the .lines format and written a <a href="https://github.com/reHackable/maxio/tree/master/tools">function</a> that can turn .lines files into svgs. This means you end up with all the marks you made with the pen in an svg (seperate from the original pdf). So, this is super useful for quick drawings and sketches but not yet so helpful for the annotation problem.</p>
+
+<p><a href="https://github.com/phil777/maxio">Someone else</a> already had the idea to use the python version of the library <a href="https://cairographics.org/pycairo/">Cairo</a> to draw the contents of the .lines file (using the reHackable’s decoding) onto a blank pdf of the correct dimensions.</p>
+
+<p>The idea is that this annotation pdf can then be “stamped” onto the original using <a href="https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/">PDftk</a>,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdftk input.pdf multistamp annot.pdf output final.pdf 
+</code></pre></div></div>
+
+<p>leaving you with the original OCR’d file with the annotations just pasted over the top.</p>
+
+<p>The original code that I found in some git issue thread surprisingly worked pretty okay just as it was!
+I branched  it, fixed some issues with it and added some funtionality, but the <a href="https://github.com/lschwetlick/maxio/tree/master/tools">rm2pdf</a> function works pretty well now. Cairo doesnt do dynamical pen width of line structure so well, but I haven’t found that too bothersome for highlighting and annotating text.
+For drawings and stuff I would recommend the <a href="https://github.com/lschwetlick/maxio/tree/master/tools">rm2svg</a> function though.</p>
+
+<p>I had originally hoped to be able to use real pdf annotations, that I could edit on the computer as well. This doesnt seem particularly realistic right now, not least because the remarkable can’t actually display standard pdf annotations.</p>
+
+<h3 id="syncing">Syncing</h3>
+
+<p>Once I had figured out how to export annotated files, all that was left was to write a script I can start when I plug the reMarkable in, to sync the contents with a predefined directory on my computer  <a href="https://github.com/lschwetlick/rMsync">(find it here)</a>.</p>
+
+<p>I went with python because I much prefer it over shell scripts, but I have since been informed that using os.system(“whatever terminal command”) is deprecated and frowned upon. It does do exactly what I want though, so… sorry I guess.</p>
+
+<p>First thing the script does is pull a full device backup from the remarkable. This isn’t strictly necessary, but I dont mind having it sitting around. 
+The remotely accessing the reMarkable requires a password. I tried for a long time with various hacks to get python to provide the password without user input. I gave up. This is clearly not a thing the terminal wants you to do. 
+“os.system” kindly waits for user input at the password stage (as opposed to the newer/not deprecated “subprocess”, which just keeps running the script without waiting). So now I just type it in or use <a href="http://remarkablewiki.com/tech/ssh">these instructions</a> to verify your computer.</p>
+
+<p>Next, the script iterates over the files, extracting their real, non-hashed name, and if they have an associated lines file (i.e. they have been annotated) it uses the above method to export annotated pdfs to a reference folder.
+Notebooks (just drawings or notes that are independent of pdfs) are also exported, but using the reHackable svg script and then a pdf conversion, because their strokes just look a bit nicer than the Cairo ones.</p>
+
+<p>Lastly, the script checks if there are any files in the local directory that are not on the reMarkable. It then uses the endpoint described in the <a href="http://remarkablewiki.com/tips/client">wiki</a> to copy those over and convert them to reMarkable readable hashed files. 
+Eventually I’d like to do this in a custom way as well, because this way, they don’t arrive on the reMarkable sorted into folders (if someone has done this already, I’d love to hear about it!).</p>
+
+<h3 id="paper-and-citation-management">Paper and Citation Management</h3>
+<p>I would like to add that this whole endevour also included figuring out the logistics of how to keep an ordered record of the papers I need.
+What I’ve found to solve this for me is JabRef. JabRef is not a pdf organizer. It saves records of literature meta data and links to files (like a pdf) in BibTex format (it can also read existing libraries) but provides a pretty good interface to browse and sort.
+Critically, it doesn’t blow up if I replace a file with another of the same name (e.g. when syncing new annotated files over).</p>
+
+<p>To be honest, it also gets a point in my book for not attempting to be a social media website and a cloud service, but just quietly goes about it’s business doing a good citation managing job.
+Fair warning though, it’s developed and maintained by nice people as a side project and it does sometimes crash (never anyhing that a program restart doesn’t cure).</p>
+
+<h3 id="extra">Extra</h3>
+
+<p>I made a sleeve. The 75€ for the original sleeve seemed kind of steep and its super easy to do. One large piece of felt and a thick rubber band gave me this:
+<img src="https://LisaSchwetlick.de/blog/resources/images/blog2/sleeve.jpg" alt="" height="500px" class="center" /></p>
+
+<h3 id="extra-2">Extra 2</h3>
+<p>I wanted a backup pen, because my posessions have an upsetting habit of being where I am not. 
+<a href="https://www.amazon.de/gp/product/B06Y3F5W87/ref=oh_aui_detailpage_o03_s00?ie=UTF8&amp;psc=1">This one</a> feels bad in your hand, is made of cheap plastic, and is way too small. But it does work in a pinch and, at 4.50€ a piece, is dirt cheap.</p>
+:ET

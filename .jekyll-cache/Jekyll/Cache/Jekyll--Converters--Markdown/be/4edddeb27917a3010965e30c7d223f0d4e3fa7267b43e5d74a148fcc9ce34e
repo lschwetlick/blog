@@ -1,11 +1,11 @@
-I"�4<p>Next to changing the interface to look like something from a hacker film, a key feature that greatly improves workflow in any code editor is user-defined hotkeys.
+I"�3<p>Next to changing the interface to look like something from a hacker film, a key feature that greatly improves workflow in any code editor is user-defined hotkeys.
 As anyone who regularily uses more than one code editor knows, having a different set of hotkeys for each environment is just an annoying and unnecessary hassle.</p>
 
 <p>I regularly use three different editors for university and personal projects: <a href="rstudio.com/">RStudio</a>, <a href="www.mathworks.com/products/matlab.html">Matlab</a>, and <a href="https://code.visualstudio.com/">Visual Studio Code</a>. Both RStudio and VSC have a nice, large set of possible hotkeys, which can easily be bound to different key combinations. To be fair, Matlab does also allow reassigning key bindings (<a href="http://hoeckerson.de/notes/2016/07/keyboard-shortcuts-in-matlab-2016a-windows-7-german/">This</a> is the most comprehensive list I’ve found outside of the actual program). Unfortunately the options are extremely limited and sometimes just not very well thought out. For example: in what world is it better to have seperate keybindings for commenting and uncommenting a line instead of one toggle switch?</p>
 
 <p>The hotkey that I was missing most of all was moving a line up or down (typically <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>Up</kbd> Ctrl+Shift+UpArrow/DownArrow).</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog1/movelineinaction.gif" alt="Move line in Action" title="Move line" /></p>
+<p><img src="/resources/images/blog1/movelineinaction.gif" alt="Move line in Action" title="Move line" /></p>
 
 <p>Effectively, every time I return to Matlab to program an experiment I feel like someone has tied the laces of my shoes together. Recently I tried to research the problem a little bit more and was surprised to find that there was not a lot of information or existing solutions to this. After some experimenting, I found two promising hacks.</p>
 
@@ -18,11 +18,11 @@ So, you can make it perform a custom action, but the hotkey binding is unchangea
 
 <p>Click “add shortcut” in the upper right corner of the interface.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog1/s1m.jpg" alt="New Shortcut" title="New Shortcut" class="shadow" /></p>
+<p><img src="/resources/images/blog1/s1m.jpg" alt="New Shortcut" title="New Shortcut" class="shadow" /></p>
 
 <p>Put in a title and the script of what you want the shortcut to do.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog1/s2s.jpg" alt="New Shortcut" title="New Shortcut" class="shadow" /></p>
+<p><img src="/resources/images/blog1/s2s.jpg" alt="New Shortcut" title="New Shortcut" class="shadow" /></p>
 
 <p>In my case I wanted to move the lines up and down in the editor. I found a a script for that on <a href="https://github.com/m-pilia/matlab-move-line/blob/master/matlab-move-line.m">github</a>.
 Disclaimer: this code only works in 2016b or later because Matlab has changed how it treats strings (This is awesome by the way, strings in Matlab were always really annoying to deal with).</p>
@@ -66,17 +66,17 @@ I found this code on the <a href="https://de.mathworks.com/matlabcentral/answers
 
 <p>I also went all-out and added little icons for each shortcut. I used the <a href="http://fontawesome.io/">Font Awesome</a> symbols and just turned them into jpgs, which is the only format Matlab accepts.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog1/up2.jpg" alt="Line Up" title="Line Up" height="50px" class="inline" />
-<img src="https://LisaSchwetlick.de/blog/resources/images/blog1/down2.jpg" alt="Line Down" title="Line Down" height="50px" class="inline" />
-<img src="https://LisaSchwetlick.de/blog/resources/images/blog1/magic2.jpg" alt="Execute Line" title="Execute Line" height="50px" class="inline" /></p>
+<p><img src="/resources/images/blog1/up2.jpg" alt="Line Up" title="Line Up" height="50px" class="inline" />
+<img src="/resources/images/blog1/down2.jpg" alt="Line Down" title="Line Down" height="50px" class="inline" />
+<img src="/resources/images/blog1/magic2.jpg" alt="Execute Line" title="Execute Line" height="50px" class="inline" /></p>
 
 <p>So now the top corner of my Matlab looks a bit nicer.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog1/s3s.jpg" alt="Nicer Icons" title="Nicer Icons" class="shadow" /></p>
+<p><img src="/resources/images/blog1/s3s.jpg" alt="Nicer Icons" title="Nicer Icons" class="shadow" /></p>
 
 <p>Now Pressing alt should make little numbers show up next to the shortcuts. So <kbd>alt</kbd> + <kbd>1</kbd> will move a line up, <kbd>alt</kbd> + <kbd>2</kbd> down, and <kbd>alt</kbd> + <kbd>3</kbd> will execute the line.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog1/s4small.jpg" alt="Nicer Icons" title="Nicer Icons" class="shadow" /></p>
+<p><img src="/resources/images/blog1/s4small.jpg" alt="Nicer Icons" title="Nicer Icons" class="shadow" /></p>
 
 <p>This is a nice-ish sort-of-solution, but I was still somewhat dissatisfied that I can’t just access my hotkey with the key combination I want.</p>
 

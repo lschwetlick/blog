@@ -1,3 +1,16 @@
+# Lisa's Notes
+
+- I am running ruby via rbenv
+- UPDATE RBENV: brew upgrade rbenv ruby-build
+- get new version: rbenv install 3.0.0
+- set new version: rbenv global 3.0.0
+- check rbenv works: curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
+- 
+
+
+
+
+
 # Ink
 
 Ink is a minmal two-column theme for [Jekyll](http://jekyllrb.com) 

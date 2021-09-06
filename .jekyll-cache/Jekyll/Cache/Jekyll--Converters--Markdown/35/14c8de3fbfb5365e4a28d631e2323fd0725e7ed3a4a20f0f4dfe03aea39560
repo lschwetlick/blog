@@ -1,4 +1,4 @@
-I"1<p>This is just a quick update on how things have developed in 2019. Unfortunately some of the things outlined in the previous <a href="https://lisaschwetlick.de/blog/2018/03/25/reMarkable/">post</a> I wrote on the subject have since been changed. ReMarkable changed their file format, which broke all the cairo code I’d written. Its probably not unsalvageable but I haven’t has the time to fix it. Someone <a href="https://github.com/jmiserez/maxio/blob/ee15bcc86e4426acd5fc70e717468862dce29fb8/tmp-rm16-ericsfraga-rm2svg.py">else</a> fixed the rm2svg script though, so that gives me something to work with. 
+I"�<p>This is just a quick update on how things have developed in 2019. Unfortunately some of the things outlined in the previous <a href="https://lisaschwetlick.de/blog/2018/03/25/reMarkable/">post</a> I wrote on the subject have since been changed. ReMarkable changed their file format, which broke all the cairo code I’d written. Its probably not unsalvageable but I haven’t has the time to fix it. Someone <a href="https://github.com/jmiserez/maxio/blob/ee15bcc86e4426acd5fc70e717468862dce29fb8/tmp-rm16-ericsfraga-rm2svg.py">else</a> fixed the rm2svg script though, so that gives me something to work with. 
 My version of the conversion scripts still live <a href="https://github.com/lschwetlick/maxio">in my maxio fork</a>, and thats where I will be pushing my updates.</p>
 
 <h1 id="how-converting-files-works-now-workflow">How converting files works now (Workflow)</h1>
@@ -6,12 +6,12 @@ My version of the conversion scripts still live <a href="https://github.com/lsch
 Inside this folder we have a *.rm file for each page in the file, numbered by page number.
 The rm2svg code converts the the markings inside an individual *.rm file to an svg.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog4/rm_filestructure.png" alt="" height="300px" class="center" /></p>
+<p><img src="/resources/images/blog4/rm_filestructure.png" alt="" height="300px" class="center" /></p>
 
 <h2 id="annotated-pdfs">Annotated PDFs</h2>
 <p>The idea stays largely the same:</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog4/annot_pdf.png" alt="" height="300px" class="center" /></p>
+<p><img src="/resources/images/blog4/annot_pdf.png" alt="" height="300px" class="center" /></p>
 
 <ol>
   <li>Loop over the *.rm files with the rm2svg script</li>

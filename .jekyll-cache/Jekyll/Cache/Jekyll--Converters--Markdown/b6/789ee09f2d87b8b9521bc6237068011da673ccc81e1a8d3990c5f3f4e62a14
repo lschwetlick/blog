@@ -1,4 +1,4 @@
-I"�.<p><em>TL;DR: bought an e-reader. Didn’t do what I wanted so I made <a href="https://github.com/lschwetlick/maxio/tree/master/tools">this</a> and <a href="https://github.com/lschwetlick/rMsync">this</a>. Now it’s not as bad anymore.</em></p>
+I".<p><em>TL;DR: bought an e-reader. Didn’t do what I wanted so I made <a href="https://github.com/lschwetlick/maxio/tree/master/tools">this</a> and <a href="https://github.com/lschwetlick/rMsync">this</a>. Now it’s not as bad anymore.</em></p>
 
 <p>For a while now I’ve been keeping an eye out for an e-reader suitable for reading academic papers. 
 Mainly I like the idea of reducing the chaos of loose sheets of paper floating around on my desk.
@@ -14,7 +14,7 @@ It just turns out most e-readers are (understandably) much more suited to e-book
 
 <p>So, long story short, I bought a <a href="https://www.remarkable.com">reMarkable</a>. Out of the box it falls tragically short of my expectations, but after a bit of tinkering it mostly fulfills my criteria. I mean, I guess we could get into a whole story about how that time could have been spent organizing my printed papers and writing my thesis, not to mention used the money to buy an iPad and Apple Pencil, but lets roll with it.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog2/rM.jpg" alt="" height="300px" class="center" /></p>
+<p><img src="/resources/images/blog2/rM.jpg" alt="" height="300px" class="center" /></p>
 
 <p><strong>Size</strong>: The screen diagonal is 10.3”. This ist just <em>barely</em> large enough for me to read papers comfortably. The resizing options on the device are slow and liable to mess up the annotations, so I generally avoid resizing.</p>
 
@@ -26,13 +26,13 @@ It just turns out most e-readers are (understandably) much more suited to e-book
 The app is just terrible. 
 The intended use is to connect the device to a wifi and sync with their provided cloud service. The app also connects to that service and lets you upload and view files. It also lets you export files to pdf and png (or so I was informed by their customer support before buying).</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog2/rMSupport.png" alt="" height="250px" class="center" /></p>
+<p><img src="/resources/images/blog2/rMSupport.png" alt="" height="250px" class="center" /></p>
 
 <p>Spoiler Alert: it doesn’t. At least not to any reasonable standard. The PDF export usually misses some of the pages, creates a file that far exceeds any reasonable expectations in file size, and actually removes the OCR layer (i.e. the text of the exported pdf can be neither searched nor marked).</p>
 
 <p>The PNG export, while at least exporting all the pages, creates images of random image sizes, so if you merge them into a pdf if might look something like this:</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog2/pngsizes.png" alt="" height="500px" class="center" /></p>
+<p><img src="/resources/images/blog2/pngsizes.png" alt="" height="500px" class="center" /></p>
 
 <p>All of this quite apart from the fact that I have no interest in storing my data on this company’s cloud.</p>
 
@@ -63,7 +63,7 @@ The intended use is to connect the device to a wifi and sync with their provided
 
 <p>In the <a href="https://dragly.org/2017/12/01/developing-for-the-remarkable/index.html">“xochitl”</a> (great name btw) folder on the reMarkable you will find each pdf file, conveniently renamed with a hash, a file of meta information and a .lines file.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog2/rMFilestructure.png" alt="" /></p>
+<p><img src="/resources/images/blog2/rMFilestructure.png" alt="" /></p>
 
 <h3 id="pdf-export">PDF export</h3>
 
@@ -111,7 +111,7 @@ Fair warning though, it’s developed and maintained by nice people as a side pr
 <h3 id="extra">Extra</h3>
 
 <p>I made a sleeve. The 75€ for the original sleeve seemed kind of steep and its super easy to do. One large piece of felt and a thick rubber band gave me this:
-<img src="https://LisaSchwetlick.de/blog/resources/images/blog2/sleeve.jpg" alt="" height="500px" class="center" /></p>
+<img src="/resources/images/blog2/sleeve.jpg" alt="" height="500px" class="center" /></p>
 
 <h3 id="extra-2">Extra 2</h3>
 <p>I wanted a backup pen, because my posessions have an upsetting habit of being where I am not. 

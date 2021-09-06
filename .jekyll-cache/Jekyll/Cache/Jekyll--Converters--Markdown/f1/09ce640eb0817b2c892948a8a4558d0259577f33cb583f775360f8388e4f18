@@ -1,4 +1,4 @@
-I"� <p>Just like all the PhD students I know, I’ve beeen using Latex as a a collection of boilerplate code combined with frantic googling. At some point recently I got really stuck and went to the documentation to try and understand some of the grammar. I feel like it helped me set straight why sometimes things don’t work when I could have sworn they should. And it made googling my problems a bit easier. These are the notes I tool when straying into LaTeX land.</p>
+I"F <p>Just like all the PhD students I know, I’ve beeen using Latex as a a collection of boilerplate code combined with frantic googling. At some point recently I got really stuck and went to the documentation to try and understand some of the grammar. I feel like it helped me set straight why sometimes things don’t work when I could have sworn they should. And it made googling my problems a bit easier. These are the notes I tool when straying into LaTeX land.</p>
 
 <h2 id="control-sequences">Control Sequences</h2>
 <p>The words <em>“command”</em> and <em>“control sequence”</em> are synonymous. In TeX the author, Donald Knuth called them control sequence in reference to cotrol characters, which existed before, in other comunication protocols. In LaTeX, later on the same concept is called a command. They are non-printing parts of the LaTeX code that define things about how the mark up will work.</p>
@@ -32,15 +32,15 @@
 
     <p>A thing that I find hard to remember is which command is a declaration (i.e. changes everything that comes after forever) like <code class="language-plaintext highlighter-rouge">\large</code> and which take the text as an input and only format that, like <code class="language-plaintext highlighter-rouge">\textbf{my fat text}</code>. This can get particularly nasty because curly braces do double duty: they indicate parameters in a command but they also define <strong>groups</strong> (see below).</p>
 
-    <p><img src="https://LisaSchwetlick.de/blog/resources/images/blog5/braces_a.png" alt="" width="300px" class="center" /></p>
+    <p><img src="/resources/images/blog5/braces_a.png" alt="" width="300px" class="center" /></p>
 
     <p>a) The braces put the word “big” in its own group (that has no special properties). The size change applies to all following words.</p>
 
-    <p><img src="https://LisaSchwetlick.de/blog/resources/images/blog5/braces_b.png" alt="" width="300px" class="center" /></p>
+    <p><img src="/resources/images/blog5/braces_b.png" alt="" width="300px" class="center" /></p>
 
     <p>b) The braces after the declarations are empty and all they do is stop it from gobbling subsequent whitespace. The size change applies to all following words.</p>
 
-    <p><img src="https://LisaSchwetlick.de/blog/resources/images/blog5/braces_c.png" alt="" width="300px" class="center" /></p>
+    <p><img src="/resources/images/blog5/braces_c.png" alt="" width="300px" class="center" /></p>
 
     <p>c) The braces contain the size change to a group which contains only the word “huge”. The size change only applies within the group.</p>
 
@@ -48,7 +48,7 @@
 
     <p>But wait- its gets weirder: d) if you have a command like <code class="language-plaintext highlighter-rouge">\textbf</code> that expects a parameter and don’t give it one, it affects the first letter that comes after it.</p>
 
-    <p><img src="https://LisaSchwetlick.de/blog/resources/images/blog5/braces_d.png" alt="" width="300px" class="center" /></p>
+    <p><img src="/resources/images/blog5/braces_d.png" alt="" width="300px" class="center" /></p>
   </li>
 </ol>
 
@@ -65,7 +65,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    `\newcommand{\enquote}[1]{``#1''} %put in the right quotes`
 </code></pre></div></div>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog5/enquote.png" alt="" width="300px" class="center" /></p>
+<p><img src="/resources/images/blog5/enquote.png" alt="" width="300px" class="center" /></p>
 
 <p>To make new environments use <code class="language-plaintext highlighter-rouge">\newenvironment{name}[num]{before}{after}</code>.
 <strong>example:</strong> drawing a box around the contents</p>
@@ -83,7 +83,7 @@
         }
 </code></pre></div></div>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog5/box.png" alt="" width="300px" class="center" /></p>
+<p><img src="/resources/images/blog5/box.png" alt="" width="300px" class="center" /></p>
 
 <h2 id="centering-things-3-ways">Centering things 3 ways</h2>
 <p>So considering all of the above we can achieve the same thing in a variety of ways:</p>

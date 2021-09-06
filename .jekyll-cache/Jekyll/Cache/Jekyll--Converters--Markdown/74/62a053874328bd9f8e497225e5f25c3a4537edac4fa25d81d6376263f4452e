@@ -1,4 +1,4 @@
-I"Q"<p>Every once in a while, when I’m in the right frame of mind, I fall down a rabbit hole and I just enjoy the ride. 
+I"�!<p>Every once in a while, when I’m in the right frame of mind, I fall down a rabbit hole and I just enjoy the ride. 
 At some point an hour or two later I’ll look up and see what I’ve done and realize I’ve just invested a ton of time into a project that’s completely over-dimensioned, kind of useless and could have been done in about 20 minutes by hand, and probably gotten a better result.
 But then I’m already 2 hours into it. I can’t just abandon it and leave it half-baked and useless. At least if it’s finished, it’ll just be useless.</p>
 
@@ -6,7 +6,7 @@ But then I’m already 2 hours into it. I can’t just abandon it and leave it h
 
 <p>A couple of specific folders that Apple thought were important, though, have different little folder icons with a symbol embossed on them: Downloads and Documents and Music and so on.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog3/default_folder_icons.png" alt="" height="100%" class="center" /></p>
+<p><img src="/resources/images/blog3/default_folder_icons.png" alt="" height="100%" class="center" /></p>
 
 <p>After a little research I found out that Apple saves all it’s icons, including the generic folder icon, under</p>
 
@@ -60,7 +60,7 @@ output = cv.merge([nB.astype(float), nG.astype(float), nR.astype(float), fA.asty
 
 <p>Well, this is what I got. The color is not all that similar to the default Apple folders.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog3/result_equation.png" alt="" height="100%" class="center" /></p>
+<p><img src="/resources/images/blog3/result_equation.png" alt="" height="100%" class="center" /></p>
 
 <h2 id="icns">ICNS</h2>
 <p>This part is really just a matter of resizing and saving the png of the result and then zipping it into an icns file.</p>
@@ -107,9 +107,9 @@ output = cv.merge([nB.astype(float), nG.astype(float), nR.astype(float), fA.asty
 <h2 id="the-disappointment">The Disappointment</h2>
 <p>Now all of this might have been pretty neat. But somehow, quite apart from the fact that the color is still off, somehow my icns file does not get displayed as nicely as the default ones. It looks like the resolution is worse or something, but I havent figured it out.</p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog3/folder_comp.png" alt="" height="100px" class="center" /></p>
+<p><img src="/resources/images/blog3/folder_comp.png" alt="" height="100px" class="center" /></p>
 
-<p><img src="https://LisaSchwetlick.de/blog/resources/images/blog3/folder_comp2.png" alt="" height="100%" class="center" /></p>
+<p><img src="/resources/images/blog3/folder_comp2.png" alt="" height="100%" class="center" /></p>
 
 <p>In the second view you can barely tell anything is in the folder icon at all and it mostly differs from the other icons by not having enough contrast or a lower resolution or something. If anyone knows why that is, let me know, I’m stumped!</p>
 

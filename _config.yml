@@ -16,9 +16,6 @@ background:         "resources/images/lisaXS.jpg"
 paginate:           5
 paginate_path:      "/page:num/"
 
-baseurl: ""
-url: ""
-
 
 markdown:           kramdown
 

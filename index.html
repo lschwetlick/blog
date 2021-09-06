@@ -1,10 +1,10 @@
 ---
-layout: default 
+layout: default
 ---
 <header class="bloghead">
     <h1 class="bloghead-title">
-    <a href="{{ site.lisa_url }}">{{ site.name }}<span>&#39;s blog</span></a>
-  </h1>
+        <a href="{{ site.lisa_url }}">{{ site.name }}<span>&#39;s blog</span></a>
+    </h1>
     <nav class="bloghead-nav">
         {% for nav in site.nav %}
         <a href="{{ nav.href }}">{{ nav.name }}<span> &nbsp;/&nbsp; </span></a> {% endfor %}
@@ -15,8 +15,8 @@ layout: default
     <h2>No post found</h2> {% else %} {% for post in paginator.posts %}
     <div class="post-list">
         <h2 class="post-title">
-      <a href="{{site.blog_url}}{{post.url }}">{{ post.title }}</a>
-    </h2> {% if post.description %}
+            <a href="{{site.url}}{{post.url }}">{{ post.title }}</a>
+        </h2> {% if post.description %}
         <p>{{ post.description }}</p>
         {% endif %}
         <div class="post-date">
@@ -25,14 +25,15 @@ layout: default
     </div>
     {% endfor %} {% if paginator.total_pages > 1 %}
     <div class="pages">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><</a>
-      {% endif %}
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+            << /a>
+                {% endif %}
 
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">></a>
-      {% endif %}
+                {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">></a>
+                {% endif %}
     </div>
     {% endif %}
-  {% endif %}
+    {% endif %}
 </div>

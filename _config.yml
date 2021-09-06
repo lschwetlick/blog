@@ -18,7 +18,7 @@ paginate:           5
 paginate_path:      "/page:num/"
 
 baseurl:            "lisaschwetlick.de/blog/"
-permalink:          :year/:month/:day/:title/
+permalink:          /:year/:month/:day/:title/
 domain: 		        lisaschwetlick.de
 url: 		            https://lisaschwetlick.de
 

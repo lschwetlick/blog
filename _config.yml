@@ -17,7 +17,7 @@ paginate:           5
 paginate_path:      "/page:num/"
 
 url: 		            https://lisaschwetlick.de
-baseurl:            blog
+baseurl:            /blog
 
 markdown:           kramdown
 
